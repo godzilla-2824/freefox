@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Recorder in Javascript</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div id="container">
+      <video id="gum" playsinline autoplay muted></video>
+      <video id="recorded" playsinline autoplay ></video>
+
+      <div>
+        <button id="start">Start camera</button>
+        <button id="record" disabled onclick="document.getElementById('gum').style.display='block';document.getElementById('recorded').style.display='none'">Record</button>
+        <button id="play" disabled onclick="document.getElementById('gum').style.display='none';document.getElementById('recorded').style.display='block'""pauseVid()">Play</button><button onclick="pauseVid()" type="button">Pause</button>
+        <script type="text/javascript">
+        var vid = document.getElementById("recorded");  
+          function pauseVid() { 
+           vid.pause(); 
+          } 
+          function playVid() { 
+            vid.play(); 
+          } 
+        </script>
+        <button id="download" disabled>Download</button>
+      </div>
+
+      <div>
+        <h4>Media Stream Constraints options</h4>
+        <p>
+          Echo cancellation: <input type="checkbox" id="echoCancellation" />
+        </p>
+      </div>
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
